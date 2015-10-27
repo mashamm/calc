@@ -11,12 +11,10 @@ public class DoubleCalc extends Calculator<Double> {
 	public Double substract(Double arg1, Double arg2) {
 		return arg1-arg2;
 	}
-
 	@Override
 	public Double multiple(Double arg1, Double arg2) {
 		return arg1*arg2;
 	}
-
 	@Override
 	public Number divide(Double arg1, Double arg2) {
 		if(arg2.doubleValue()!=0){
