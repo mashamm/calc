@@ -9,32 +9,32 @@ import java.util.regex.Pattern;
 import edu.samoilenko.model.Model;
 
 public class MyParser {
-	private Model model;
+	private Model<Number> model;
 	private BufferedReader br;
 	private String arg1;
 	private String arg2;
 	private String command;
-	public Model getModel() {
+	public Model<Number> getModel() {
 		return model;
 	}
-	public void setModel(Model model) {
+	public void setModel(Model<Number> model) {
 		this.model = model;
 	}
 	public MyParser(){
 		br = new BufferedReader(new InputStreamReader(System.in));
-		model = new Model();
+		model = new Model<Number>();
 	}
 	private boolean parseExp(){
 		String regex="([-+]?[0-9]+{1,9}\\.?[0-9]*){1}+([*/+-]{1})([-+]?{1}[0-9]+{1,9}\\.?[0-9]*){1}";
         Pattern r = Pattern.compile(regex);
-		System.out.println("Input  the expression, something like this: arg1*arg2");
+		//System.out.println("Input  the expression, something like this: arg1*arg2");
 		try {
 			String s = br.readLine();
 			 Matcher m = r.matcher(s);
 			 if (m.find()) {
-				    System.out.println("group 1: " + m.group(1));
-				    System.out.println("group 2: " + m.group(2));
-				    System.out.println("group 3: " + m.group(3));
+				  //  System.out.println("group 1: " + m.group(1));
+				   // System.out.println("group 2: " + m.group(2));
+				   // System.out.println("group 3: " + m.group(3));
 				    arg1=m.group(1);
 				    command=m.group(2);
 				    arg2=m.group(3);	
