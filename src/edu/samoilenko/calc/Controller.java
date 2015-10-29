@@ -37,8 +37,10 @@ public class Controller {
 	
 	@SuppressWarnings("unchecked")
 	public void start(){
-		p.parse();
-		m=p.getModel();
-		System.out.println(commands.get(m.getCommand()).calculate(m));
+		if(p.parse()==true){
+			m=p.getModel();
+		System.out.println(commands.get(m.getCommand()).calculate(m));}
+		else
+			throw new RuntimeException("Invalid expression,try again");
 	}
 }
